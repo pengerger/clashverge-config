@@ -1,5 +1,6 @@
-const fs = require('fs');
 const axios = require('axios'); // 使用 axios 库进行 HTTP 请求
+const YAML = require('yaml'); // 用于生成 YAML 格式文件
+const fs = require('fs'); // 用于文件操作
 
 async function fetchProxiesFromSubscription(url) {
   try {
@@ -14,8 +15,7 @@ async function fetchProxiesFromSubscription(url) {
 
 async function generateConfig() {
   const subscriptionUrls = [
-    'https://example.com/subscription1.yaml',
-    'https://example.com/subscription2.yaml'
+    'https://api-huacloud.dev/sub?target=clash&insert=true&emoji=true&udp=true&clash.doh=true&new_name=true&filename=Flower_Trojan&url=https%3A%2F%2Fapi.xmancdn.com%2Fosubscribe.php%3Fsid%3D88236%26token%3D0KG2aNkTPx3L',
   ];
 
   let proxies = [];
